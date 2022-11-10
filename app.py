@@ -25,10 +25,7 @@ def pokedecks_page():
 
 @app.route('/pokemon')
 def pokemon_page():
-    query = "SELECT pokemon_id, pokemon_name, height, weight, evolution FROM pokemon ORDER BY pokemon_id;"
-    cursor = db.execute_query(db_connection=db_connection, query=query)
-    results = cursor.fetchall()
-    return render_template('pokemon.html', pokemon=results)
+    return render_template("pokemon.html")
 
 @app.route('/pokemon_evolutions')
 def poke_evolutions_page():
